@@ -1,0 +1,23 @@
+Bounded context: "Question"
+Workflow "Post Question"
+	Triggered by: "User question posting request received" 
+	Input: "User's question"
+	Output: "Question posted" event or "Rejected question" event or "Manual review" event
+//step 1
+	Do validate question
+		Dependencies: ML text analyzer
+		Validate user question
+			If validation == accept then
+				return accepted
+			Else If validation == review then
+				return manual review
+			Else 
+				return rejected
+	If question is "rejected" then
+		return "Rejected question" and stop
+	If question is "manual review" then
+		return "Question under manual reviewing"
+//step 2
+	Post question
+//step 3
+	Return "Question published" event
