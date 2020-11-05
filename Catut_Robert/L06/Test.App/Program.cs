@@ -15,7 +15,7 @@ namespace Test.App
     {
         static void Main(string[] args)
         {
-            var emailResult = UnverifiedEmail.Create("radescu_andreea98@yahoo.com");
+            var emailResult = UnverifiedEmail.Create("robert_catut@yahoo.com");
 
 
             emailResult.Match(
